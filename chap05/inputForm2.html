@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html>
+
+<head>
+    <h1>성적 조회후 정정 / 삭제</h1>
+    <script language="JavaScript">
+        function check_form() {
+            var search_studentid = search_form.search_studentid.value;
+
+            if (isNaN(search_studentid)) {
+                alert('잘못된 값이 입력되었습니다. 올바른 값을 입력해주세요');
+                search_form.search_studentid.value = '';
+                search_form.search_studentid.focus();
+                return false;
+            }
+
+            search_form.action = "showREC.jsp";
+            search_form.submit();
+        }
+
+        function removeChar(event) {
+            event = event || window.event;
+            var keyID = (event.which) ? event.which : event.keyCode;
+            if (keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39)
+                return;
+            else
+                event.target.value = event.target.value.replace(/[^0-9]/g, "");
+        }
+    </script>
+</head>
+
+<body>
+    <br>
+    <br>
+    <form method="post" name="search_form">
+        조회할 학번
+        <input type="text" name="search_studentid" value="" required>
+        <input type="submit" value="조회" onClick="return check_form()">
+    </form>
+    <table border=1>
+        <tr>
+            <td width=100>
+                <p align=center>이름</p>
+            </td>
+            <td width=300>
+                <p align=center>
+                    <input type="text" name="name" maxlength="10">
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width=100>
+                <p align=center>학번</p>
+            </td>
+            <td width=300>
+                <p align=center></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=100>
+                <p align=center>국어</p>
+            </td>
+            <td width=300>
+                <p align=center>
+                    <input type="number" onkeyup="removeChar(event)" name="kor">
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width=100>
+                <p align=center>영어</p>
+            </td>
+            <td width=300>
+                <p align=center>
+                    <input type="number" onkeyup="removeChar(event)" name="eng">
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width=100>
+                <p align=center>수학</p>
+            </td>
+            <td width=300>
+                <p align=center>
+                    <input type="number" onkeyup="removeChar(event)" name="mat">
+                </p>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

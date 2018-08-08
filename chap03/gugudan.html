@@ -1,0 +1,37 @@
+﻿<!--k15전아현 / 2018.06.04.-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<meta charset "utf-8">
+<!--한글 출력 위한 utf-8인코딩-->
+
+<HTML>
+
+<BODY>
+    <SCRIPT>
+        document.write("<H2> 구구단 </H2>");
+        //<H2> : 표제 글씨 크기를 2로 지정하여 출력
+        document.write("<TABLE border=0 width=100%>");
+        //<TABLE border=0 width=100%> : 표 형식을 0 넓이를 100%로 설정하여 생성
+        for (var k15_i = 1; k15_i < 10; k15_i = k15_i + 3) {
+            //for문으로 변수 k15_i의 초기값을 1로 설정하고 10보다 작은 동안 3씩 더해져 그 값이 누적되도록 설정
+            //같은 열에 1, 4, 7 / 2, 5, 8 / 3, 6, 9단이 출력되도록 설정해 줌
+            for (var k15_j = 1; k15_j < 10; k15_j++) {
+                //for문으로 변수 k15_j 초기값을 1로 설정하고 10보다 작은 동안 1씩 더해지도록 설정
+                document.write("<TR>");
+                //<TR> : 행 생성
+                document.write("<TD rowspan=2>" + "<strong>emart</strong>" + "</TD>");
+                document.write("<TD>" + (k15_i + 1) + " * " + k15_j + " = " + (k15_i + 1) * k15_j + "</TD>");
+                document.write("<TD>" + (k15_i + 2) + " * " + k15_j + " = " + (k15_i + 2) * k15_j + "</TD>");
+                //<TD> : 열 생성
+                //k15_i, k15_i+1, k15_i+2의 값이 각각 대입하여 곱해지도록 설정하여 같은 열에 1, 2, 3 / 4, 5, 6 / 7, 8, 9단이 출력되도록 설정
+                document.write("</TR>");
+            }
+            document.write("<TR><TD colspan=3><HR></TD></TR>");
+            //<TD colspan=3> : 3행 병합
+            //<HR> : 밑줄 출력
+        }
+        document.write("</TABLE>");
+    </SCRIPT>
+</BODY>
+
+</HTML>

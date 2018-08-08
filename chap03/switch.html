@@ -1,0 +1,51 @@
+<!--k15전아현 / 2018.06.04.-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<meta charset "utf-8">
+<!--한글 출력 위한 utf-8인코딩-->
+
+<HTML>
+
+<BODY>
+    <SCRIPT>
+        function k15_hakjum(k15_score) {
+            //k15_score 변수 값을 대입하는 k15_hakjum 함수 생성 : k15_hakjum(k15_score)
+            switch (k15_score_ten) {
+                case 10:
+                case 9:
+                    return "A";
+                    break;
+                case 8:
+                    return "B";
+                    break;
+                case 7:
+                    return "C";
+                    break;
+                case 6:
+                    return "D";
+                    break;
+                default:
+                    return "F";
+                    break;
+            }
+            //switch문으로 k15_score_ten의 값에 따라 case문 설정
+            //k15_score_ten의 값이 9, 10인 경우 "A" 반환되도록 설정
+            //k15_score_ten의 값이 8인 경우 "B" 반환되도록 설정
+            //k15_score_ten의 값이 7인 경우 "C" 반환되도록 설정
+            //k15_score_ten의 값이 6인 경우 "D" 반환되도록 설정
+            //그 외의 경우 "F" 출력되도록 default 값 설정
+
+        }
+    </SCRIPT>
+    <SCRIPT>
+        k15_score = prompt("Enter score", "");
+        //k15_score 변수 값을 경고창에 문자를 입력한 값이 되도록 설정(초기값 : ""(공백))
+        var k15_score_ten = parseInt(k15_score / 10);
+        //변수 k15_score_ten을 생성하고 그 값을 (k15_score / 10)의 값을 정수형으로 형변환한 값으로 설정(parseInt() 활용)
+        //k15_score / 10의 값이 실수가 될 수 있으므로 정수형으로 형변환이 필요함
+        document.write("Your Score is <strong>" + k15_score + "</strong>", "<br>Your Hakjum is <strong>" + k15_hakjum(
+            k15_score_ten) + "</strong>");
+    </SCRIPT>
+</BODY>
+
+</HTML>

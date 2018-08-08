@@ -1,0 +1,46 @@
+﻿<!--k15전아현 / 2018.06.04.-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<meta charset "utf-8">
+<!--한글 출력 위한 utf-8인코딩-->
+
+<HTML>
+
+<HEAD>
+
+    <SCRIPT>
+        function k15_call1() {
+            //javascript에서 함수는 function 객체 / k15_call() 함수 생성
+            var a = "abc";
+            var b = "efg";
+            //변수 a의 값은 "abc", b의 값은 "efg"로 설정
+            document.write("String연산 : " + (a + b));
+            //document.write : 출력문
+            //String연산의 경우 변수1 + 변수2의 결과값은 변수1변수2가 출력됨
+        }
+
+        function k15_call2() {
+            var a = 1;
+            var b = 2;
+            //변수 a의 값은 1, b의 값은 2로 설정
+            document.write("<br>Integer연산 : " + (a + b) + "<br>");
+            //Integer연산의 경우 정수 + 정수의 결과값은 두 정수의 합이 출력됨
+            //"" 안에 태그 사용하면 html파일 생성할 때와 마찬가지로 태그 사용
+        }
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+    <SCRIPT>
+        k15_call1();
+        //k15_call1() 함수 호출
+    </SCRIPT>
+    <SCRIPT>
+        k15_call2();
+        //k15_call2() 함수 호츨
+    </SCRIPT>
+    Good...
+    <!-- <BODY></BODY> 안에 Good... 입력하여 화면에 출력되도록 설정 -->
+</BODY>
+
+</HTML>

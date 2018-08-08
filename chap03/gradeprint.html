@@ -1,0 +1,166 @@
+﻿<!--k15전아현 / 2018.06.04.-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<meta charset "utf-8">
+<!--한글 출력 위한 utf-8인코딩-->
+
+<HTML>
+
+<HEAD>
+    <SCRIPT>
+        function addZero(n, number) {
+            //두 변수를 대입하는 addZero() 함수 생성
+            var zero = "";
+            //변수 zero의 초기값을 ""으로 설정(문자열 변수)
+            n = n.toString();
+            //n의 값을 정수 n을 문자열로 강제 형변환한 값으로 설정하기 위해 n.toString()으로 설정
+
+            if (n.length < number) {
+                for (var i = 0; i < number - n.length; i++)
+                    zero += "0";
+                //for문으로 정수 변수 i의 초기값을 0으로 설정하고 number - n.length보다 작은 동안 그 값이 1씩 더해지도록 설정하여 
+                //for문이 반복되는 동안  zero의 값을 zero + "0"으로 설정
+                //즉 십의자리 등이 되지 않는 수에는 zero의 값이 0이 누적되도록 설정(number자리수에 맞추어 0누적)
+            }
+            return zero + n;
+            //if조건으로 n.length의 크기가 number보다 작으면 zero + n을 반환하도록 설정
+        }
+    </SCRIPT>
+    <SCRIPT>
+        function addZero2(n) {
+            return n < 10 ? "0" + n : n;
+        }
+        // : 연산자를 활용하여 10의자리가 되지 않는 정수 앞자리에 0을 붙이도록 addZero2 함수 설정
+    </SCRIPT>
+    <SCRIPT>
+        var k15_studentID = new Array;
+        var k15_name = new Array;
+        var k15_kor = new Array;
+        var k15_eng = new Array;
+        var k15_mat = new Array;
+        var k15_sum = new Array;
+        var k15_ave = new Array;
+        //성적표에 출력되는 학번, 이름, 국어, 영어, 수학, 총점, 평균의 배열을 각각 생성
+    </SCRIPT>
+
+    <SCRIPT>
+        var k15_sumkor = 0;
+        var k15_sumeng = 0;
+        var k15_summat = 0;
+        var k15_sumsum = 0;
+        var k15_sumave = 0;
+        //각 과목과 총점, 평균의 누적된 합을 구하기 위하여 변수를 선언하고 초기값을 0으로 설정
+        var k15_iPerson = 30;
+        //구하고자 하는 인원수의 변수를 생성하고 값을 임의로 설정
+        var date = new Date();
+        //Date 객체 생성
+        var k15_date = date.getFullYear() + "." + addZero((date.getMonth() + 1), 2) + "." +
+            addZero(date.getDate(), 2) + " " + addZero(date.getHours(), 2) + ":" + addZero(date.getMinutes(), 2) + ":" +
+            addZero(date.getSeconds(), 2);
+        //k15_date 변수 생성하여 출력 형식에 맞게 날짜가 출력될 수 있도록 설정(연.월.일 시:분:초)
+        //addZero를 월, 일, 시, 분, 초 등에 활용하여 십의 자리가 되지 않는 경우 앞에 0을 덧붙일 수 있음
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+    <SCRIPT>
+        function HeaderPrint() {
+            //머리부분을 출력하는 HeaderPrint() 함수 생성
+            document.write("<TABLE border=0 valign=middle> <TR>")
+            //테이블 생성하여 표형식(border)을 0으로 지정하고 상하정렬방식(valign)을 middle로 지정한 후 열<TR> 생성
+            document.write("<TD colspan=7 align=center>성적집계표<br></TD></TR>");
+            //행<TD> 생성하여 7행을 병합한 뒤(colspan=7) 좌우정렬방식(align) center로 지정 
+            document.write("<TR>");
+            document.write("<TD colspan=7 align=right>출력일자 : " + k15_date + "<br></TD></TR>");
+            //행<TD> 생성하여 7행을 병합한 뒤(colspan=7) 좌우정렬방식(align) right 지정 
+            document.write("<TR><TD colspan=7>================================================<br></TD></TR>");
+            document.write("<TR align=right><TD align=left>번호</TD>");
+            document.write("<TD>이름</TD>");
+            document.write("<TD>국어</TD>");
+            document.write("<TD>영어</TD>");
+            document.write("<TD>수학</TD>");
+            document.write("<TD>총점</TD>");
+            document.write("<TD>평균<br></TD></TR>");
+            document.write("<TR><TD colspan=7>================================================<br></TD></TR>");
+            //점수 출력하기 위한 구분선과 각 목록 행 생성
+        }
+    </SCRIPT>
+
+    <SCRIPT>
+        function ItemPrint() {
+            //본문부분을 출력하는 ItemPrint() 함수 생성
+            for (var i = 0; i < k15_iPerson; i++) {
+                //for문으로 i의 초기값을 0으로 설정하고 k15_iPerson의 값보다 작은 동안 1씩 더해지도록 설정
+                k15_studentID[i] = "" + addZero((i + 1), 2);
+                k15_name[i] = "홍길" + addZero((i + 1), 2);
+                //학번, 이름의 숫자 부분에 십의 자리가 안 되면 0이 출력되도록 addZero()함수에 대입
+                k15_kor[i] = parseInt(Math.random() * 100);
+                k15_eng[i] = parseInt(Math.random() * 100);
+                k15_mat[i] = parseInt(Math.random() * 100);
+                //Math.random()함수 사용하여 각 과목의 점수를 임의로 입력하도록 설정한 후 parseInt()로 정수형으로 형변환
+                k15_sum[i] = k15_kor[i] + k15_eng[i] + k15_mat[i];
+                k15_ave[i] = parseInt(k15_sum[i] / 3);
+                //점수의 합을 3으로 나눈 결과가 일의 자리로 딱 떨어지지 않기 때문에 정수형으로 형변환 해주어야 함
+            }
+
+            for (var i = 0; i < k15_studentID.length; i++) {
+                //for문으로 i의 초기값을 0으로 설정하고 k15_studentID의 개수보다 적은 동안 그 값이 1씩 더해지도록 설정
+                k15_sumkor += k15_kor[i];
+                k15_sumeng += k15_eng[i];
+                k15_summat += k15_mat[i];
+                //k15_sumkor, k15_sumeng, k15_summat의 값이 각 과목의 배열의 값들이 더해진 값으로 설정
+            }
+            k15_sumsum = k15_sumkor + k15_sumeng + k15_summat;
+            k15_sumave = parseInt(k15_sumsum / 3);
+            //점수의 합을 3으로 나눈 결과가 일의 자리로 딱 떨어지지 않기 때문에 정수형으로 형변환 해주어야 함
+
+            for (var i = 0; i < k15_studentID.length; i++) {
+                //for문으로 i의 초기값을 0으로 설정하고 k15_studentID의 개수보다 적은 동안 그 값이 1씩 더해지도록 설정
+                document.write("<tr align=right>");
+                document.write("<td align=left>" + k15_studentID[i] + "</td>");
+                document.write("<td>" + k15_name[i] + "</td>");
+                document.write("<td>" + k15_kor[i] + "</td>");
+                document.write("<td>" + k15_eng[i] + "</td>");
+                document.write("<td>" + k15_mat[i] + "</td>");
+                document.write("<td>" + k15_sum[i] + "</td>");
+                document.write("<td>" + k15_ave[i] + "</td></tr>");
+                //한 행을 생성하여 배열의 값을 대입하여 출력
+            }
+
+
+        }
+    </SCRIPT>
+    <SCRIPT>
+        function TailPrint() {
+            //말미부분을 출력하는 TailPrint() 함수 생성
+            document.write("<TR><TD colspan=7>================================================<br></TD></TR>");
+            document.write("<tr align=right>");
+            document.write("<td colspan=2 align=left>합계</td>");
+            //두 행이 합해지도록 colspan=2 입력
+            document.write("<td>" + k15_sumkor + "</td>");
+            document.write("<td>" + k15_sumeng + "</td>");
+            document.write("<td>" + k15_summat + "</td>");
+            document.write("<td>" + k15_sumsum + "</td>");
+            document.write("<td>" + k15_sumave + "</td></tr>");
+            //한 행을 생성하여 배열의 값을 대입하여 출력
+
+            document.write("<tr align=right>");
+            document.write("<td colspan=2 align=left>평균</td>");
+            //두 행이 합해지도록 colspan=2 입력
+            document.write("<td>" + parseInt(k15_sumkor / k15_iPerson) + "</td>");
+            document.write("<td>" + parseInt(k15_sumeng / k15_iPerson) + "</td>");
+            document.write("<td>" + parseInt(k15_summat / k15_iPerson) + "</td>");
+            document.write("<td>" + parseInt(k15_sumsum / k15_iPerson) + "</td>");
+            document.write("<td>" + parseInt(k15_sumave / k15_iPerson) + "</td></tr>");
+            //한 행을 생성하여 배열의 값을 대입하여 출력
+        }
+    </SCRIPT>
+    <SCRIPT>
+        HeaderPrint();
+        ItemPrint();
+        TailPrint();
+        //각 함수 호출하여 결과값 화면에 출력
+    </SCRIPT>
+</BODY>
+
+</HTML>

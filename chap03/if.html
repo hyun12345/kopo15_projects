@@ -1,0 +1,38 @@
+<!--k15전아현 / 2018.06.04.-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<meta charset "utf-8">
+<!--한글 출력 위한 utf-8인코딩-->
+
+<HTML>
+
+<BODY>
+    <SCRIPT>
+        //<SCRIPT>안에 java script 입력
+        function k15_hakjum(k15_score) {
+            //k15_score 변수 값을 대입하는 k15_hakjum 함수 생성 : k15_hakjum(k15_score)
+            if (k15_score >= 90) {
+                return "A";
+            } else if (k15_score >= 80) {
+                return "B";
+            } else if (k15_score >= 70) {
+                return "C";
+            } else if (k15_score >= 60) {
+                return "D";
+            } else {
+                return "F";
+            }
+            //if, else if 조건문과 else문을 활용하여 k15_score 값의 조건을 정해주어 return으로 각 값이 반환되도록 설정
+        }
+    </SCRIPT>
+    <SCRIPT>
+        k15_score = prompt("Enter score", "");
+        //k15_score 변수 값을 경고창에 문자를 입력한 값이 되도록 설정(초기값 : ""(공백))
+        document.write("Your Score is <strong>" + k15_score + "</strong>", "<br>Your Hakjum is <strong>" + k15_hakjum(
+            k15_score) + "</strong>");
+        //"<strong></strong> : 문자 진하게 출력 / <br> : 개행"
+        //변수, 함수 대입하여 결과문 출력
+    </SCRIPT>
+</BODY>
+
+</HTML>

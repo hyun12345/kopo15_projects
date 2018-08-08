@@ -1,0 +1,60 @@
+﻿<!--k15전아현 / 2018.06.04.-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<meta charset "utf-8">
+<!--한글 출력 위한 utf-8인코딩-->
+
+<HTML>
+
+<BODY>
+    <SCRIPT>
+        var k15_date1 = new Date();
+        //변수 k15_date1의 값을 new Date()의 인스턴스로 생성
+        //new Date(); : 현재 연월일 시분초 출력 
+        var k15_weekday = ["Sunday", "Monday", "Tuesday", "Wednsday", "Thursday", "Friday", "Saturday"];
+        //getDay() 출력하기 위하여 요일 배열인 k15_weekday 생성하여 값 입력
+        document.write(" 년도는 : " + k15_date1.getFullYear() + " 월은 : " + (k15_date1.getMonth() + 1) + " 일은 : " +
+            k15_date1.getDate() +
+            " 요일은 : " + k15_weekday[k15_date1.getDay()] + " 시는 : " + k15_date1.getHours() + " 분은 : " + k15_date1.getMinutes() +
+            " 초는 : " + k15_date1.getSeconds() +
+            " 밀리초 : " + k15_date1.getMilliseconds() + "<HR>");
+        //<HR> : 밑줄 출력
+        //.getFullYear() : 크롬을 포함한 모든 브라우저에서 제대로 된 년도 값을 출력하기 위한 호출 함수
+        //.getMonth() + 1 : Month 배열의 경우 문자(영어) 배열이기 때문에 0부터 11번째 요소까지 존재하므로 정확한 월 값을 출력하기 위해 +1을 해주어야 함
+        //getDay() : Day 배열의 경우 문자 배열이기 때문에 0부터 6번째 요소까지 존재하므로 정확한 요일 값을 출력하기 위해 배열을 생성하여 호출해주어야 함
+
+        k15_date1.setYear(2010);
+        document.write(k15_date1 + "<HR>");
+        //new Date();를 통해 호출한 날짜 값의 년도를 2010으로 설정하여 k15_date1 값 출력
+        k15_date1.setMonth(7);
+        document.write(k15_date1 + "<HR>")
+        //new Date();를 통해 호출한 날짜 값의 월을 8(7 + 1)로 설정하여 k15_date1 값 출력
+    </SCRIPT>
+
+    <SCRIPT>
+        var k15_date2 = new Date(2020, 11, 31);
+        //변수 k15_date2 값을 new Date(2020, 11, 31)의 인스턴스로 생성
+        //new Date(2020, 11, 31); : 2020년 12월 31일의 연월일 시분초 출력 
+        var k15_weekday = ["Sunday", "Monday", "Tuesday", "Wednsday", "Thursday", "Friday", "Saturday"];
+        //getDay() 출력하기 위하여 요일 배열인 k15_weekday 생성하여 값 입력
+
+        document.write("<br> 년도는 : " + k15_date2.getFullYear() + " 월은 : " + (k15_date2.getMonth() + 1) + " 일은 : " +
+            k15_date2.getDate() +
+            " 요일은 : " + k15_weekday[k15_date2.getDay()] + " 시는 : " + k15_date2.getHours() + " 분은 : " + k15_date2.getMinutes() +
+            " 초는 : " + k15_date2.getSeconds() +
+            " 밀리초 : " + k15_date2.getMilliseconds() + "<HR>");
+        //<HR> : 밑줄 출력
+        //.getFullYear() : 크롬을 포함한 모든 브라우저에서 제대로 된 년도 값을 출력하기 위한 호출 함수
+        //.getMonth() + 1 : Month 배열의 경우 문자(영어) 배열이기 때문에 0부터 11번째 요소까지 존재하므로 정확한 월 값을 출력하기 위해 +1을 해주어야 함
+        //getDay() : Day 배열의 경우 문자 배열이기 때문에 0부터 6번째 요소까지 존재하므로 정확한 요일 값을 출력하기 위해 배열을 생성하여 호출해주어야 함
+
+        k15_date2.setYear(2010);
+        document.write(k15_date2 + "<HR>");
+        //new Date();를 통해 호출한 날짜 값의 년도를 2010으로 설정하여 k15_date2 값 출력
+        k15_date2.setMonth(7);
+        document.write(k15_date2 + "<HR>")
+        //new Date();를 통해 호출한 날짜 값의 월을 8(7 + 1)로 설정하여 k15_date2 값 출력
+    </SCRIPT>
+</BODY>
+
+</HTML>

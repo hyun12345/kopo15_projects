@@ -1,0 +1,117 @@
+<!--k15전아현 / 2018.06.01.-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<!--한글 출력 위한 utf-8인코딩-->
+
+<html>
+
+<head>
+    <title>문서의 기본 구조를 나타내 주는 태그</title>
+</head>
+
+<body text="#000000">
+    <!--body text 색 #000000으로 지정-->
+    <table border=0>
+        <tr>
+            <td colspan>
+                <strong>
+                    <font size=5>*문서의 기본 구조를 나타내 주는 태그
+                        <br>
+                        <br>
+                    </font>
+                </strong>
+            </td>
+        </tr>
+    </table>
+    <table border=1 cellspacing=0 cellpadding=5>
+        <!--border:테두리 / cellspacing:셀여백 / cellpadding:셀간격-->
+        <tr bgcolor="#BDBDBD">
+            <!--1행 배경색 #BDBDBD로 지정-->
+
+            <td width=150 align=center>
+                <B>형 식</B>
+            </td>
+            <td width=200 align=center>
+                <B>구 성</B>
+            </td>
+            <td width=200 align=center>
+                <B>내 용</B>
+            </td>
+            <!--<td width=n align=x> : 넓이, 배열 정의 -> 1행에 넓이 지정할시 전체 표에 영향-->
+        </tr>
+        <tr height=40>
+            <!--<tr height=n> : 해당 행의 높이 설정-->
+            <td>
+                &lt;HTML&gt;
+                <!--&lt; : < 출력 (lesser than) / &gt; : >출력 (greater than)-->
+            </td>
+            <td>
+                &lt;HTML&gt;...&lt;/HTML&gt;
+            </td>
+            <td>
+                HTML언어로 작성되어있다는 것을 알려줌
+            </td>
+        </tr>
+        <tr height=40>
+            <td>
+                &lt;HEAD&gt;
+            </td>
+            <td>
+                &lt;HEAD&gt;...&lt;/HEAD&gt;
+            </td>
+            <td>
+                Heading의 준말로 글의 머리말에 해당합니다
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &lt;BODY&gt;
+            </td>
+            <td>
+                &lt;BODY&gt;...&lt;/BODY&gt;
+            </td>
+            <td>
+                본문에 해당하는 부분을 알려줍니다.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &lt;TITLE&gt;
+            </td>
+            <td>
+                &lt;TITLE&gt;...&lt;/TITLE&gt;
+
+            </td>
+            <td>
+                타이틀바에 새겨질 글자를 정의합니다
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &lt;Hn&gt;
+            </td>
+            <td>
+                &lt;Hn&gt;...&lt;/Hn&gt;
+            </td>
+            <td>
+                표제부분에 들어갈말을 정의합니다.1-6까지의숫자
+                <br>를 사용하고 숫자가 커질수록 표제는 작아집니다.
+                <br>기본값은 H4입니다.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &lt;!--...--&gt;
+            </td>
+            <td>
+                &lt;!--주석내용--&gt;
+            </td>
+            <td>
+                주석을 달거나 잠시동안 이미지를 보이지 않게 할때
+                <br>사용합니다.(가급적 요즘은 -- 두 개..)
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

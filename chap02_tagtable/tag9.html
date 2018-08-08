@@ -1,0 +1,105 @@
+﻿<!--k15전아현 / 2018.06.01.-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<!--한글 출력 위한 utf-8인코딩-->
+
+<html>
+
+<head>
+    <title>글자의 모양을 정의해 주는 태그</title>
+</head>
+
+<body text="#000000">
+    <table border=0>
+        <tr>
+            <td colspan>
+                <strong>
+                    <font size=5>*글자의 모양을 정의해 주는 태그
+                        <br>
+                        <br>
+                    </font>
+                </strong>
+            </td>
+        </tr>
+    </table>
+    <table border=1 cellspacing=0 cellpadding=5>
+        <tr bgcolor="#BDBDBD">
+            <td width=150 align=center>
+                <B>형 식</B>
+            </td>
+            <td width=200 align=center>
+                <B>구 성</B>
+            </td>
+            <td width=200 align=center>
+                <B>내 용</B>
+            </td>
+        </tr>
+        <!--1행 생성 : <tr>에서 배경색 지정, <td>에서 각 칸의 넓이, 배열 지정-->
+        <tr>
+            <td align=left>
+                &lt;STRONG&gt;
+            </td>
+            <td align=left>
+                &lt;STRONG&gt;...&lt;/STRONG&gt;
+            </td>
+            <td rowspan=2 align=left>굵은 글씨를 나타내 주는 태그입니다.</td>
+        </tr>
+        <!--align=left : 왼쪽 정렬 / 기본적으로 왼쪽으로 정렬되므로 별도의 설정 필요 없어 생략 가능-->
+        <!--<td rospan=2> : 2열 병합-->
+        <tr>
+            <td align=left>
+                &lt;B&gt;
+            </td>
+            <td align=left>
+                &lt;B&gt;...&lt;/B&gt;
+            </td>
+        </tr>
+        <tr>
+            <td align=left>
+                &lt;EM&gt;
+            </td>
+            <td align=left>
+                &lt;EM&gt;...&lt;/EM&gt;
+            </td>
+            <td rowspan=2 align=left>이탤릭체의 글씨를 나타내 주는 태그입
+                <br>니다.</td>
+        </tr>
+        <tr>
+            <td align=left>
+                &lt;I&gt;
+            </td>
+            <td align=left>
+                &lt;I&gt;...&lt;/I&gt;
+            </td>
+        </tr>
+        <tr>
+            <td align=left>
+                &lt;KBD&gt;
+            </td>
+            <td align=left>
+                &lt;KBD&gt;...&lt;/KBD&gt;
+            </td>
+            <td rowspan=3 align=left>타자기체의 글씨를 나타내 주는 태그입
+                <br>니다.</td>
+        </tr>
+        <tr>
+            <td align=left>
+                &lt;CODE&gt;
+            </td>
+            <td align=left>
+                &lt;CODE&gt;...&lt;/CODE&gt;
+            </td>
+        </tr>
+        <tr>
+            <td align=left>
+                &lt;TT&gt;
+            </td>
+            <td align=left>
+                &lt;TT&gt;...&lt;/TT&gt;
+            </td>
+        </tr>
+        <!--표 항목 아래 내용 입력하여 각 행 생성-->
+    </table>
+</body>
+
+</html>

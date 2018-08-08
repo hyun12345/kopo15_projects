@@ -1,0 +1,90 @@
+<!--k15전아현 / 2018.06.01.-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<!--한글 출력 위한 utf-8인코딩-->
+<html>
+
+<head>
+    <title>목록을 정리해주는 태그 </title>
+</head>
+
+<body text="#000000">
+    <table border=0>
+        <tr>
+            <td colspan>
+                <strong>
+                    <font size=5>*목록을 정리해주는 태그
+                        <br>
+                        <br>
+                    </font>
+                </strong>
+            </td>
+        </tr>
+    </table>
+    <table border=1 cellspacing=0 cellpadding=5>
+        <tr bgcolor="#BDBDBD">
+            <td width=150 align=center>
+                <B>형 식</B>
+            </td>
+            <td width=200 align=center>
+                <B>구 성</B>
+            </td>
+            <td width=200 align=center>
+                <B>내 용</B>
+            </td>
+        </tr>
+        <!--1행 생성 : <tr>에서 배경색 지정, <td>에서 각 칸의 넓이, 배열 지정-->
+        <tr>
+            <td rowspan=5>
+                <!--<td rowspan=n> : 세로칸 n만큼 합쳐줌 / 병합하고자 하는 첫번째 행에 지정-->
+                <!--<td colspan=n> : 가로칸 n만큼 합쳐줌-->
+                &lt;LI&gt;
+            </td>
+            <td>
+                &lt;UL&gt;...&lt;/UL&gt;
+            </td>
+            <td>
+                순서가 없는 목록으로 일반적인 나열을 말합니다.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &lt;OL&gt;...&lt;/OL&gt;</td>
+            <td>
+                순서가 있는 목록으로 위에서부터 번호를 매깁니다.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &lt;MENU&gt;...&lt;/MENU&gt;
+            </td>
+            <td>
+                메뉴 목록으로 그리길지 않은 문장의 열거에 사용합
+                <br>니다.
+            </td>
+        </tr>
+        <tr>
+
+            <td>
+                &lt;DIR&gt;...&lt;/DIR&gt;
+            </td>
+            <td>
+                디렉토리 목록으로 메뉴 목록보다 짧은문장을 나열
+                <br>합니다.
+            </td>
+        </tr>
+        <tr>
+
+            <td>
+                &lt;DL&gt;...&lt;/DL&gt;
+            </td>
+            <td>
+                정의 목록 태그입니다.&lt;LI&gt;가아닌 &lt;DT&gt;와 &lt;DD&gt;
+                <br>를 사용합니다.
+            </td>
+        </tr>
+        <!--표 항목 아래 내용 입력하여 각 행 생성-->
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+﻿<!--k15전아현 / 2018.06.04.-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<meta charset "utf-8">
+<!--한글 출력 위한 utf-8인코딩-->
+
+<HTML>
+
+<BODY>
+    <SCRIPT>
+        k15_name = prompt("Enter Name", "홍길동");
+        //prompt(String, Int/String) : 화면에 문자(Int 를 쓰고 초기값을 넣어줌
+        //따라서 홍길동이 초기값으로 경고문 입력창에 출력됨
+        if (confirm("Continue ?\nClick Button") == true) {
+            k15_answer = 'true';
+            //confirm(String) : 화면에 경고문구와 확인, 취소 버튼 출력
+            //Continue ? \nClick Button이 경고문구로 출력되며 if조건으로 확인(true) 클릭하면 변수 k15_answer의 값을 'true'가 되도록 설정
+        } else {
+            k15_answer = 'false';
+            //else문으로 if 조건에 부합하지 않는 경우 k15_answer 변수의 값을 'false'가 되도록 설정
+        }
+        alert("Name : " + k15_name + "\nAnswer : " + k15_answer);
+        //alert(String) : String을 경고문으로 출력
+        //Name : k15_name 변수의 값 \nAnswer : k15_answer 변수의 값이 경고문에 출력됨
+        document.write("Your Name is " + k15_name);
+        //화면에 Your name is 뒤에 k15_name 변수의 값이 출력되도록 설정
+    </SCRIPT>
+</BODY>
+
+</HTML>

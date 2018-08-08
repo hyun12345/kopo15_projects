@@ -1,0 +1,44 @@
+<!--k15전아현 / 2018.06.04.-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<meta charset "utf-8">
+<!--한글 출력 위한 utf-8인코딩-->
+
+<HTML>
+
+<HEAD>
+</HEAD>
+
+<BODY>
+    <SCRIPT>
+        function k15_sum1(a, b) {
+            return eval(parseInt(a) + parseInt(b));
+        }
+        //두 변수 대입받는 k15_sum1 함수 생성
+        //return값을 a와 b의 값을 각각 정수형으로 형변환(parseInt())
+        //eval(String)은 문자를 식으로 인식하여 계산결과를 반환하는 함수
+    </SCRIPT>
+    <SCRIPT>
+        k15_num1 = prompt("Enter First Number", "");
+        k15_num2 = prompt("Enter Second Number", "");
+        //First Number와 Second Number를 각각 입력하도록 경고창 설정
+        document.write("Your First Number is <strong>" + k15_num1 + "</strong>", "<br>Your Second Number is <strong>" +
+            k15_num2 + "</strong>" + "<br>Your Two Number's Sum is <strong>" + k15_sum1(k15_num1, k15_num2) +
+            "</strong>");
+        //k15_num1, k15_num2의 값을 각각 출력하고 k15_sum1()함수에 대입하여 그 결과값을 출력
+    </SCRIPT>
+    <SCRIPT>
+        function k15_sum2(a, b) {
+            return a + b;
+            //두 변수 대입받는 k15_sum2 함수 생성
+            //return 값을 a + b로 설정
+        }
+    </SCRIPT>
+    <SCRIPT>
+        document.write("<br>My Two Number's Sum is <strong>" + k15_sum2(5, 10) + "</strong>");
+        //kk15_sum2()함수에 계산하고자 하는 두 정수 대입하여 그 결과값을 출력
+    </SCRIPT>
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,48 @@
+﻿<!--k15전아현 / 2018.06.04.-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<meta charset "utf-8">
+<!--한글 출력 위한 utf-8인코딩-->
+
+<HTML>
+
+<BODY>
+    <SCRIPT>
+        function k15_func() {
+            //k15_func()함수 생성
+            var k15_sum = 0;
+            //k15_sum 변수 값을 0으로 설정
+            var n = k15_func.arguments.length;
+            //n 변수 값을 k15_func.arguments.length(k15_func.arguments의 개수)로 설정
+            for (var k15_i = 0; k15_i < n; k15_i++) {
+                //for문으로 k15_i의 초기값이 0이고 n의 값보다 작은 동안 그 값이 1씩 더해지도록 설정
+                k15_sum += k15_func.arguments[k15_i];
+                //k15_sum의 값을 k15_sum + k15_func.arguments[k15_i]로 설정
+                //arguments : 객체
+            }
+            console.log(k15_func.prototype);
+            //console 창에 k15_func.prototype 출력
+            console.log(k15_func);
+            //console 창에 k15_func 출력
+            return k15_sum;
+            //k15_sum의 값을 반환
+
+        }
+        k15_func(1, 2, 3, 4, 5);
+        console.log(k15_func.prototype);
+        //k15_func에 이와 같은 값을 대입했을 때 console 창에 k15_func.prototype 출력
+    </SCRIPT>
+    <SCRIPT>
+        alert(k15_func(1));
+        // arguments[k15_i] 값 1을 k15_func()함수에 대입하여 그 값을 경고창으로 출력
+        alert(k15_func(1, 2));
+        // arguments[k15_i] 값 1, 2을 k15_func()함수에 대입하여 그 값을 경고창으로 출력
+        alert(k15_func(1, 2, 3));
+        // arguments[k15_i] 값 1, 2, 3을 k15_func()함수에 대입하여 그 값을 경고창으로 출력
+        alert(k15_func(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+        // arguments[k15_i] 값 1, 2, 3, 4, 5, 6, 7, 8, 9, 10을 k15_func()함수에 대입하여 그 값을 경고창으로 출력
+    </SCRIPT>
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,24 @@
+<!--k15전아현 / 2018.06.04.-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<meta charset "utf-8">
+<!--한글 출력 위한 utf-8인코딩-->
+
+<HTML>
+
+<BODY>
+    <SCRIPT>
+        //document : 현재 문서에 대한 정보
+        var doc = open("", "output");
+        //변수 doc의 값을 1번 프레임에서 2번 프레임(output) 출력할 수 있도록 설정
+        doc.document.write('<BODY><H1>Hello!</H1>');
+        //doc에 <BODY><H1>Hello!</H1> 입력하여 <BODY>부분 생성
+        doc.document.write('</BODY>');
+        //doc에 </BODY> 입력하여 <BODY> 닫아줌
+        //<BODY> 부분 2번 프레임(output)에 출력
+        doc.document.close();
+        //doc 닫아줌
+    </SCRIPT>
+</BODY>
+
+</HTML>

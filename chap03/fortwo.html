@@ -1,0 +1,43 @@
+<!--k15전아현 / 2018.06.04.-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<meta charset "utf-8">
+<!--한글 출력 위한 utf-8인코딩-->
+
+<HTML>
+
+<BODY>
+    <SCRIPT>
+        var k15_obj = {
+            "first": "0",
+            "second": "1",
+            "third": "2",
+            "fourth": "3",
+            "fifth": "4",
+            "sixth": "5",
+            "seventh": "6",
+            "eighth": "7",
+            "ninth": "8",
+            "tenth": "9"
+        };
+        //k15_obj : java script에서의 객체
+        //"key(property first...)" : "값" 입력하여 설정
+
+        var k15_answer = "";
+        //변수 k15_answer의 초기값을 ""로 선언
+
+        for (var k15_i in k15_obj) {
+            //var k15_i in k15_obj : k15_obj 객체의 k15_i번째 index 값이 출력됨
+            //var k15_i of k15_obj : k15_obj 객체의 k15_i번째 값이 출력됨
+            k15_answer += "" + "k15_i = " + k15_i + " : " + k15_obj[k15_i] + "<br>";
+            //k15_answer변수의 값은 k15_answer + "" + "k15_i = " + k15_i + " : " + k15_obj[k15_i] + "<br>";
+            //k15_i : 객체 k15_obj의 key(property first...) 값
+            //k15_obj[k15_i] : 객체 k15_obj의 k15_i번째 값
+            //k15_answer의 값을 +=으로 누적되도록 설정하여 객체 전체가 출력되도록 설정
+        }
+        document.write(k15_answer);
+        //k15_answer 변수를 대입하여 화면에 출력
+    </SCRIPT>
+</BODY>
+
+</HTML>

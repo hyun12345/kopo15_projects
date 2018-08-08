@@ -1,0 +1,40 @@
+<!--k15전아현 / 2018.06.04.-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<meta charset "utf-8">
+<!--한글 출력 위한 utf-8인코딩-->
+
+<HTML>
+
+<HEAD>
+    <SCRIPT>
+        var k15_name1 = "Hello";
+        //전역 변수 K15_name 생성하여 값 설정
+
+        function k15_call1() {
+            var k15_name = "World";
+            //k15_call1() 함수 내에 지역변수 k15_name 생성하여 값 설정
+            document.write("지역 : " + k15_name);
+            //k15_name 변수 호출 : 지역변수만 호출됨
+        }
+    </SCRIPT>
+    <SCRIPT>
+        function k15_call2() {
+            document.write("전역 : " + k15_name)
+            //k15_name 변수 호출 : 전역변수만 호출됨
+        }
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+    <SCRIPT>
+        k15_call1();
+    </SCRIPT>
+    <SCRIPT>
+        k15_call2();
+    </SCRIPT>
+    </SCRIPT>
+    Good...
+</BODY>
+
+</HTML>

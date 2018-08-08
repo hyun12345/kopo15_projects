@@ -1,0 +1,143 @@
+<!--k15전아현 / 2018.07.18.-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<?xml version="1.0" encoding="utf-8"?>
+<meta charset "utf-8">
+<!--한글 출력 위한 utf-8인코딩-->
+
+<HTML>
+
+<head>
+    <script type="text/javascript">
+        function chkword(obj, maxByte) {
+
+            var strValue = obj.value;
+            var strLen = strValue.length;
+            var totalByte = 0;
+            var len = 0;
+            var oneChar = "";
+            var str2 = "";
+
+            for (var i = 0; i < strLen; i++) {
+                //escape() : 아스키문자가 아니면 모두 유니코드 형식으로 변환
+                //변환된 형식 : 16진수 형식으로 표시, 1바이트 문자는 %XX 형태로, 2바이트 문자는 %uXXXX형태로 변환
+                //1byte문자 빈칸 (%20), 2바이트 문자 한글(%uD55C%uAE00) 
+                oneChar = strValue.charAt(i);
+                if (escape(oneChar).length > 4) {
+                    totalByte += 2;
+                    //한글인 경우 바이트 2씩 더해지도록 설정
+                } else {
+                    totalByte++;
+                    //한글이 아닌 경우 바이트 1씩 더해지도록 설정
+                }
+
+                if (totalByte <= maxByte) {
+                    len = i + 1;
+                    //totalByte의 값이 maxByte보다 작거나 같으면 전부 입력 가능
+                }
+            }
+
+            if (totalByte > maxByte) {
+                alert("한글 기준 10자를 초과 입력 할 수 없습니다.");
+                str2 = strValue.substr(0, len);
+                //0부터 maxByte보다 같거나 작을 때까지의 totalByte 까지 만큼의 문자 길이까지만 입력하도록
+                obj.value = str2;
+                chkword(obj, 4000);
+            }
+
+            if (strValue.match(' ')) {
+                alert("공백은 입력할 수 없습니다.");
+                str2 = "";
+                obj.value = str2;
+                //공백 입력을 방지하기 위하여 이와 같이 경고창을 띄우며, 초기값인 ""이 되도록 설정
+            }
+        }
+
+        function removeChar(event) {
+            event = event || window.event;
+            var keyID = (event.which) ? event.which : event.keyCode;
+            if (keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39)
+                return;
+            else
+                event.target.value = event.target.value.replace(/[^0-9]/g, "");
+        }
+    </script>
+</head>
+
+<BODY>
+    <strong>
+        <h1>성적입력추가</h1>
+    </strong>
+    <br>
+    <br>
+    <form method="post" action="insertDB.jsp">
+        <!-- Post방식 : html페이지에 form 형태에서 값을 전달 / insertDB.jsp 페이지에서 실행-->
+        <table border=0 width=400 cellsapcing=1>
+            <tr>
+                <td align=right>
+                    <input type="submit" value="추가">
+                </td>
+            </tr>
+        </table>
+        <table border=1 width=400 cellspacing=1>
+            <tr>
+                <td>
+                    <p align=center>이름</p>
+                </td>
+                <td>
+                    <center>
+
+                        <input type="text" style="text-align:left; width:170px;" name="name" pattern='^[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z]+$' required onkeyup='chkword(this, 20)'>
+                    </center>
+                </td>
+                </center>
+            </tr>
+            <tr>
+                <td>
+                    <p align=center>학번</p>
+                </td>
+                <td>
+                    <center>
+                        자동부여
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p align=center>국어</p>
+                </td>
+                <td>
+                    <center>
+                        <input type="number" onkeyup="removeChar(event)" min=0 max=100 style="text-align:left; width:170px;" name="kor" value="<%= kor %>"
+                            required>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p align=center>영어</p>
+                </td>
+                <td>
+                    <center>
+                        <input type="number" onkeyup="removeChar(event)" min=0 max=100 style="text-align:left; width:170px;" name="eng" value="<%= eng %>"
+                            required>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p align=center>수학</p>
+                </td>
+                <td>
+                    <center>
+                        <input type="number" onkeyup="removeChar(event)" min=0 max=100 style="text-align:left; width:170px;" name="mat" value="<%= mat %>"
+                            required>
+                    </center>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</BODY>
+
+
+</HTML>

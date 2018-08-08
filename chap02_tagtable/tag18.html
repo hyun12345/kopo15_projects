@@ -1,0 +1,87 @@
+<!--k15전아현 / 2018.06.01.-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<!--한글 출력 위한 utf-8인코딩-->
+
+<html>
+
+<head>
+    <title>창 만들기 태그</title>
+</head>
+
+<body text="#000000">
+    <table border=0>
+        <tr>
+            <td colspan>
+                <strong>
+                    <font size=5>*창 만들기 태그
+                        <br>
+                        <br>
+                    </font>
+                </strong>
+            </td>
+        </tr>
+    </table>
+    <table border=1 cellspacing=0 cellpadding=5>
+        <tr bgcolor="#BDBDBD">
+            <td width=150 align=center>
+                <B>형 식</B>
+            </td>
+            <td width=200 align=center>
+                <B>구 성</B>
+            </td>
+            <td width=200 align=center>
+                <B>내 용</B>
+            </td>
+        </tr>
+        <!--1행 생성 : <tr>에서 배경색 지정, <td>에서 각 칸의 넓이, 배열 지정-->
+        <tr>
+            <td rowspan=7>&lt;FRAME&gt;
+                <td>&lt;FRAMESET&gt;...&lt;/FRAMESET&gt;
+                </td>
+                <td>창의 기본 틀을 지정합니다.
+                </td>
+        </tr>
+        <tr>
+            <td>&lt;FRAMESET ROW= "숫자 혹은 %"&gt;
+            </td>
+            <td>위 아래로 나눠줍니다.
+            </td>
+        </tr>
+        <tr>
+            <td>&lt;FRAMESET COLS= "숫자 혹은 %"&gt;
+            </td>
+            <td>좌우로 나눠줍니다.
+            </td>
+        </tr>
+        <tr>
+            <td>&lt;FRAME SRC="..." MARGINWIDTH="
+                <br>..."&gt;
+            </td>
+            <td>창에 들어갈 좌우 여백을 정의합니다.
+            </td>
+        </tr>
+        <tr>
+            <td>&lt;FRAME SRC="..." MARGINHEIGHT=
+                <br>"..."&gt;
+            </td>
+            <td>창에 들어갈 상하 여백을 정의합니다.
+            </td>
+        </tr>
+        <tr>
+            <td>&lt;FRAME SCROLLING="..."&gt;
+            </td>
+            <td>스크롤바를 설정해 줍니다.
+            </td>
+        </tr>
+        <tr>
+            <td>&lt;NOFRAMES&gt;...&lt;/NOFRAMES&gt;
+            </td>
+            <td>프레임이 안보이게 해줍니다.
+            </td>
+        </tr>
+        <!--표 항목 아래 내용 입력하여 각 행 생성-->
+    </table>
+</body>
+
+</html>
